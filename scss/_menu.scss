@@ -1,0 +1,46 @@
+// Menu button
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 25px;
+    top: 10px;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-text {
+        font-family: sci-fi;
+        font-size: 3rem;
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        @include easeOut;
+    }
+
+    .btn-closed {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-family: sci-fi;
+        font-size: 3rem;
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        opacity: 0;
+        visibility: hidden;
+        @include easeOut;
+    }
+
+    // Rotate and swap menu text
+    &.close {
+        transform: rotate(180deg);
+        .btn-text {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .btn-closed {
+            opacity: 1;
+            color: #382a27;
+            visibility: visible;
+        }
+    }
+}
