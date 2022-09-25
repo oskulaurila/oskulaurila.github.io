@@ -1,5 +1,7 @@
+
 // Menu button
 .menu-btn {
+    line-height: 100px;
     position: absolute;
     z-index: 3;
     right: 25px;
@@ -8,39 +10,97 @@
     @include easeOut;
 
     .btn-text {
+        line-height: 100px;
         font-family: sci-fi;
         font-size: 3rem;
-        width: 28px;
-        height: 3px;
-        margin: 0 0 5px 0;
         @include easeOut;
     }
 
     .btn-closed {
-        position: absolute;
-        top: 0;
-        right: 0;
+        line-height: 100px;
         font-family: sci-fi;
         font-size: 3rem;
-        width: 28px;
-        height: 3px;
-        margin: 0 0 5px 0;
+        position: absolute;
+        right: 0;
         opacity: 0;
+        top: 0;
         visibility: hidden;
         @include easeOut;
     }
 
     // Rotate and swap menu text
     &.close {
-        transform: rotate(180deg);
+        transform: rotate(360deg);
         .btn-text {
             opacity: 0;
             visibility: hidden;
         }
         .btn-closed {
+            transform: translate(5px, 0px);
             opacity: 1;
-            color: #382a27;
+            color: $secondary-color;
             visibility: visible;
         }
+    }
+}
+
+
+// Menu overlay
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    @include easeOut;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        @include easeOut;
+    }
+    &-branding, 
+    &-nav {
+        display: flex;
+        float: left;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        overflow: hidden;
+    }
+    &-nav{
+        height: 70vh;
+        margin: 0;
+        padding: 0;
+        background-color: #171717;
+        list-style: none;
+        transform: translate3d(0, 100%, 0);
+        @include easeOut;
+
+        &.show{
+        // Slide in from right
+            transform: translate3d(0,0,0);
+        }
+    }
+    // branding
+    &-branding {
+        height: 30vh;
+        background: url(../img/occult.png);
+        transform: translate3d(0, -100%, 0);
+        @include easeOut;
+                
+        &.show {
+        // slide in from left
+        opacity: 0.5;
+        transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .nav-item{
+        font-size: 6rem;
+        font-weight: 800;
+        text-transform: uppercase;
     }
 }

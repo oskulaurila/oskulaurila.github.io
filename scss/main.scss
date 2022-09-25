@@ -3,6 +3,9 @@
 
 * {
     box-sizing: border-box;
+    
+    // Disable text select
+    user-select: none;
 }
 
 body {
@@ -13,11 +16,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5; 
   
-    /* Invisible */
+    //  Invisibilty
     opacity:0;  
     animation:fadeIn ease-in 1;
     animation-fill-mode:forwards;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-delay: 0.7s;
     @include background
   }
@@ -26,24 +29,22 @@ body {
 
 h1{
     font-family: sci-fi;
-    font-size: 15rem;
+    font-size: 12rem; 
+    font-size: 10vw;
     text-transform: uppercase;
-    
-    
+    letter-spacing: 3rem;
 }
 
 h2, 
 h3 {
     margin: 0;
     font-weight: 300;
-    
 
     &.lg-heading {
         font-size: 6rem;
     }
 
     &.sm-heading {
-        margin-bottom: 2rem;
         padding: 0.2rem 1rem;
         background: rgba(lighten($primary-color, 5), 0.2);
     }
@@ -67,11 +68,14 @@ header {
 main {
     text-align: center;
     padding: 4rem;
-    height: 100%;
+    height: 100vh;
 
     .icons {
         margin-top: 1rem;
-
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
        a {
            padding: 0.4rem;
            &:hover {
@@ -84,7 +88,10 @@ main {
     &#home {
         overflow: hidden;
         h1 {
-            margin-top: 20vh;
+            margin-bottom: 0;
+        }
+        .center-content {
+            margin-top: 25vh;
         }
     }
 }

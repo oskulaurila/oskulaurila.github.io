@@ -9,7 +9,7 @@ $background-opacity: 0.9;
     src: url(../font/Disolve_light.ttf);
 }
 
-/* Fade in the content */
+// Fade in the content
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 @mixin easeOut {
@@ -22,9 +22,10 @@ $background-opacity: 0.9;
             background: $home-image;
             background-color: #171717;
             background-attachment: fixed;
-            background-size:contain; 
+            background-size: cover; 
             background-repeat: no-repeat;
             background-position: center;
+            
         }
     }
 
