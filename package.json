@@ -1,0 +1,22 @@
+{
+  "name": "lut-front-end-22",
+  "version": "1.0.0",
+  "description": "Portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://laurilaosku@bitbucket.org/laurilaosku/lut-front-end-22.git"
+  },
+  "author": "Osku Laurila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/laurilaosku/lut-front-end-22/issues"
+  },
+  "homepage": "https://bitbucket.org/laurilaosku/lut-front-end-22#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
