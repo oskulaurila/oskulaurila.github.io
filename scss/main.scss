@@ -50,11 +50,6 @@ h3 {
     }
 }
 
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
 header {
     position: fixed;
     z-index: 2;
@@ -71,6 +66,7 @@ main {
     height: 100vh;
 
     .icons {
+
         margin-top: 1rem;
         position: absolute;
         bottom: 20px;
@@ -78,6 +74,8 @@ main {
         right: 0;
        a {
            padding: 0.4rem;
+           text-decoration: none;
+           color:#fff;
            &:hover {
                color: $secondary-color;
                @include easeOut();
