@@ -1,0 +1,49 @@
+// Widescreen
+@include media-xl {
+
+}
+
+// Desktops & Laptops
+@include media-lg {
+    main {
+
+        .lg-heading {
+            letter-spacing: 2rem;
+        }
+
+        .sm-heading {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+// Tablets
+@include media-md {
+    main {
+        text-align: left;
+        padding: 2rem;
+
+        .lg-heading {
+            letter-spacing: 1.5rem;
+        }
+
+        .sm-heading {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+// Smartphones
+@include media-sm {
+    main {
+        padding: 1rem;
+
+        .lg-heading {
+            letter-spacing: 1rem;
+        }
+
+        .sm-heading {
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'mobile';
 
 * {
     box-sizing: border-box;
@@ -62,7 +63,6 @@ header {
 
 main {
     text-align: center;
-    padding: 4rem;
     height: 100vh;
 
     .icons {
