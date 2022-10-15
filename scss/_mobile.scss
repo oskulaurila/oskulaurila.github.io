@@ -31,6 +31,14 @@
             font-size: 1.2rem;
         }
     }
+
+    ul.menu-nav {
+        height: 70vh;
+        .nav-link{
+            font-size: 10vw;
+        }
+            
+    }
 }
 
 // Smartphones
@@ -44,6 +52,13 @@
 
         .sm-heading {
             font-size: 1rem;
+        }
+    }
+
+    ul.menu-nav {
+        .nav-link{
+            margin-bottom: 5px;
+            font-size: 12vw;
         }
     }
 }
