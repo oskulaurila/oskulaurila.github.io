@@ -1,5 +1,6 @@
-$primary-color: black;
-$secondary-color:#fd4f95;
+$primary-color: #fff;
+$secondary-color:#171717;
+$accent-color: #fd4f95;
 $show-home-image: true;
 $home-image: url(../img/background.png);
 $background-opacity: 0.9;
@@ -26,6 +27,15 @@ $background-opacity: 0.9;
             background-repeat: no-repeat;
             background-position: center;
         }
+    }
+}
+
+// Set Text Color
+@function set-text-color($color) {
+    @if (lightness($color) > 40) {
+        @return #171717;
+    } @else {
+        @return #fff;
     }
 }
 

@@ -1,11 +1,15 @@
 // Widescreen
 @include media-xl {
+    main {
+        padding: 1rem;
+    }
 
 }
 
 // Desktops & Laptops
 @include media-lg {
     main {
+        padding: 1rem;
 
         .lg-heading {
             letter-spacing: 2rem;
@@ -39,6 +43,18 @@
         }
             
     }
+
+    .about-info {
+        grid-template-areas:
+        'bioimage'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+        
+        grid-template-columns: 1fr;
+}
+
 }
 
 // Smartphones

@@ -38,7 +38,7 @@
         .btn-closed {
             transform: translate(0px, 0px);
             opacity: 1;
-            color: $secondary-color;
+            color: $accent-color;
             visibility: visible;
         }
     }
@@ -76,7 +76,7 @@
         height: 80vh;
         margin: 0;
         padding: 0;
-        background-color: #171717;
+        background-color: set-text-color($primary-color);
         list-style: none;
         transform: translate3d(0, 100%, 0);
 
@@ -176,7 +176,7 @@
         display: inline-block;
         position: relative;
         text-decoration: none;
-        color: #fff;
+        color: $primary-color;
         transition: color 0.6s ease-in-out;
         &:hover {
             color: $secondary-color;
