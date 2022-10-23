@@ -30,10 +30,8 @@ body {
 h1{
     text-align: center;
     font-family: sci-fi;
-    font-size: 12rem; 
     font-size: 145px;
     text-transform: uppercase;
-    letter-spacing: 3rem;
     margin-top: 10vh;
 }
 
@@ -137,6 +135,9 @@ main {
     max-width: 1090px;
     margin-left: auto;
     margin-right: auto;
+    h3 {  
+    text-align: left;
+    }
 }
 
 .bio-image {
@@ -174,9 +175,26 @@ main {
 
 .job {
     background: lighten($secondary-color, 2);
-    padding: 0.5rem;
+    padding: 16px;
     border-top: $accent-color 3px solid;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    color:#a1a1a1;
+    h3  {
+        color: $accent-color;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h6 {
+        margin-top: 8px;
+        color:#b2815b;
+    }
+    p {
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
 }
 
 // Work/projects
@@ -194,6 +212,31 @@ main {
         margin-bottom: 4px;
         width: 100%;
         max-width: 250px;
+
+        // Hover animation with leave effect
+
+        -webkit-animation: out 1s;
+
+        &:hover {
+        transition: all 0.5s ease-in-out;
+        box-shadow: 0px 1px 2px 0px rgba(253,79,149,0.3),
+        1px 2px 4px 0px rgba(253,79,149,0.3),
+        2px 4px 8px 0px rgba(253,79,149,0.3),
+        2px 4px 16px 0px rgba(253,79,149,0.3),;
+        -webkit-animation: in 1s;
+
+
+        // Prevent animation to reset to first frame
+        -webkit-animation-fill-mode: forwards;
+        @-webkit-keyframes in {
+            from {-webkit-transform: rotate(0deg);}
+            to {-webkit-transform: rotate(2deg);}
+        }
+        @-webkit-keyframes out {
+            0% {-webkit-transform: rotate(2deg);}
+            100% {-webkit-transform: rotate(0deg);}
+        }
+    }
     }
 }
 
