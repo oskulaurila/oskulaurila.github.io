@@ -179,7 +179,7 @@
         color: $primary-color;
         transition: color 0.6s ease-in-out;
         &:hover {
-            color: $secondary-color;
+            color: $accent-color;
             @include easeOut;
         }
     }
