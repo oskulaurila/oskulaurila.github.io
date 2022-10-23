@@ -1,0 +1,395 @@
+@font-face {
+  font-family: sci-fi;
+  src: url(../font/Disolve_light.ttf); }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.menu-btn {
+  line-height: 100px;
+  position: absolute;
+  z-index: 3;
+  right: 25px;
+  top: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-text {
+    line-height: 100px;
+    font-family: sci-fi;
+    font-size: 3rem;
+    transition: all 0.5s ease-out; }
+  .menu-btn .btn-closed {
+    line-height: 100px;
+    font-family: sci-fi;
+    font-size: 3rem;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    top: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotateY(180deg); }
+    .menu-btn.close .btn-text {
+      opacity: 0;
+      visibility: hidden; }
+    .menu-btn.close .btn-closed {
+      transform: translate(0px, 0px);
+      opacity: 1;
+      color: #fd4f95;
+      visibility: visible; }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s ease-in-out; }
+  .menu.show {
+    visibility: visible;
+    opacity: 1; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    float: left;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    overflow: hidden;
+    transition: all 0.8s ease-in-out; }
+  .menu-nav {
+    height: 80vh;
+    margin: 0;
+    padding: 0;
+    background-color: #171717;
+    list-style: none;
+    transform: translate3d(0, 100%, 0); }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    height: 30vh;
+    opacity: 0;
+    background: url(../img/occult.png);
+    transform: translate3d(0, -100%, 0); }
+    .menu-branding.show {
+      opacity: 0.5;
+      transform: translate3d(0, 0, 0);
+      transition-delay: 0.15s; }
+  .menu .tarot {
+    z-index: 1;
+    position: absolute;
+    top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 22vh;
+    height: 31vh;
+    max-width: 250px;
+    max-height: 350px;
+    transform: translate3d(700%, 0, 0) rotate(20deg);
+    border-radius: 4%;
+    perspective: 500px;
+    transition: all 0.5s ease-out; }
+    .menu .tarot.show {
+      transition-delay: 0.5s;
+      transform: translate3d(0, 0, 0) rotate(-2deg); }
+    .menu .tarot.tarot:hover .content {
+      transform: rotateY(180deg) rotate(-4deg);
+      transition: transform 0,5s; }
+    .menu .tarot .content {
+      border-radius: 10px;
+      box-shadow: 0 5 30px rgba(0, 0, 0, 0.85);
+      background-size: contain;
+      background: url(../img/tarot-1.png);
+      background-size: contain;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 1s; }
+      .menu .tarot .content.front, .menu .tarot .content .back {
+        border-radius: 10px;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: url(../img/tarot.png);
+        background-size: contain;
+        backface-visibility: hidden; }
+  .menu .nav-item {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-out; }
+    .menu .nav-item.show {
+      opacity: 0.8;
+      visibility: visible;
+      transition: all 0.5s ease-out; }
+    .menu .nav-item.current > a {
+      color: #2f2f2f; }
+  .menu .nav-link {
+    font-size: 6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.6s ease-in-out; }
+    .menu .nav-link:hover {
+      color: #fd4f95;
+      transition: all 0.5s ease-out; }
+
+* {
+  box-sizing: border-box;
+  user-select: none; }
+
+body {
+  background-color: #171717;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1.5s;
+  animation-delay: 0.7s; }
+  body#bg-img {
+    background: url(../img/background.png);
+    background-color: #171717;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+
+h1 {
+  text-align: center;
+  font-family: sci-fi;
+  font-size: 145px;
+  text-transform: uppercase;
+  margin-top: 10vh; }
+
+h2 {
+  text-align: center;
+  margin-bottom: 64px;
+  font-weight: 300; }
+  h2.lg-heading {
+    font-size: 6rem; }
+  h2.sm-heading {
+    padding: 0.2rem 1rem;
+    background: rgba(10, 10, 10, 0.3); }
+
+h3 {
+  text-align: center;
+  margin: 0;
+  font-weight: 300; }
+  h3.lg-heading {
+    font-size: 6rem; }
+  h3.sm-heading {
+    padding: 0.2rem 1rem;
+    background: rgba(10, 10, 10, 0.3); }
+
+header {
+  z-index: 2;
+  width: 100vw; }
+
+.text-secondary {
+  color: #fd4f95; }
+
+main {
+  text-align: center;
+  height: calc(100vh - 21px); }
+  main .icons {
+    margin-top: 1rem;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0; }
+    main .icons a {
+      padding: 0.4rem;
+      text-decoration: none;
+      color: #fff; }
+      main .icons a:hover {
+        color: #fd4f95;
+        transition: all 0.5s ease-out; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-bottom: 0;
+      font-size: 10vw; }
+    main#home .center-content {
+      margin-top: 25vh; }
+  main#work h2 {
+    font-size: 18px;
+    font-family: sci-fi;
+    color: #5e5e5e; }
+    main#work h2:hover {
+      transition: all 0.3s ease-in-out;
+      color: #fd4f95; }
+
+.about-info {
+  display: grid;
+  grid-gap: 32px;
+  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1090px;
+  margin-left: auto;
+  margin-right: auto; }
+  .about-info h3 {
+    text-align: left; }
+
+.bio-image {
+  grid-area: bioimage;
+  max-width: 300px;
+  margin: auto;
+  border-radius: 50%;
+  border: #fd4f95 2px solid; }
+
+.bio {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+  grid-area: bio;
+  font-size: 1.5rem; }
+  .bio p {
+    color: #e9c27f;
+    font-weight: 300;
+    margin-top: 0px; }
+
+.job-1 {
+  grid-area: job1; }
+
+.job-2 {
+  grid-area: job2; }
+
+.job-3 {
+  grid-area: job3; }
+
+.job {
+  background: #1c1c1c;
+  padding: 16px;
+  border-top: #fd4f95 3px solid;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  color: #a1a1a1; }
+  .job h3 {
+    color: #fd4f95;
+    text-align: center;
+    text-transform: uppercase; }
+  .job h6 {
+    margin-top: 8px;
+    color: #b2815b; }
+  .job p {
+    margin-top: auto;
+    margin-bottom: auto; }
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  max-width: 1090px;
+  margin-left: auto;
+  margin-right: auto; }
+  .projects img {
+    border: 1px solid #b2815b1f;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    width: 100%;
+    max-width: 250px;
+    -webkit-animation: out 1s; }
+    .projects img:hover {
+      transition: all 0.5s ease-in-out;
+      box-shadow: 0px 1px 2px 0px rgba(253, 79, 149, 0.3), 1px 2px 4px 0px rgba(253, 79, 149, 0.3), 2px 4px 8px 0px rgba(253, 79, 149, 0.3), 2px 4px 16px 0px rgba(253, 79, 149, 0.3);
+      -webkit-animation: in 1s;
+      -webkit-animation-fill-mode: forwards; }
+
+@-webkit-keyframes in {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(2deg); } }
+
+@-webkit-keyframes out {
+  0% {
+    -webkit-transform: rotate(2deg); }
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 8px 8px;
+  border: 1px;
+  max-width: 250px;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  background: #14161b;
+  border: 1px solid #323049;
+  color: #b2815b;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    transition: all 0.3s ease-in-out;
+    background: #171717;
+    border: 1px solid #474567;
+    color: #474567; }
+
+@media screen and (min-width: 1171px) {
+  main {
+    padding: 1rem; } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  main {
+    padding: 1rem; }
+    main .lg-heading {
+      font-size: 10vw;
+      letter-spacing: 2rem; }
+    main .sm-heading {
+      font-size: 1.3rem; } }
+
+@media screen and (max-width: 768px) {
+  main {
+    text-align: left;
+    padding: 2rem; }
+    main .lg-heading {
+      font-size: 10vw;
+      letter-spacing: 1.5rem; }
+    main .sm-heading {
+      font-size: 1.2rem; }
+  ul.menu-nav {
+    height: 70vh; }
+    ul.menu-nav .nav-link {
+      font-size: 10vw; }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 530px; }
+    .projects .item {
+      margin-left: auto;
+      margin-right: auto; } }
+
+@media screen and (max-width: 580px) {
+  main {
+    padding: 1rem; }
+    main .lg-heading {
+      letter-spacing: 1rem;
+      font-size: 10vw; }
+    main .sm-heading {
+      font-size: 1rem; }
+  ul.menu-nav .nav-link {
+    margin-bottom: 5px;
+    font-size: 12vw; }
+  .projects {
+    grid-template-columns: 1fr;
+    max-width: 250px; }
+    .projects .item {
+      margin-left: auto;
+      margin-right: auto; } }
