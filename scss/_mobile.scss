@@ -1,10 +1,13 @@
 // Widescreen
 @include media-xl {
     main {
+
+        .lg-heading {
         padding: 1rem;
+        font-size: 145px;
         letter-spacing: 3rem;
     }
-
+    }
 }
 
 // Desktops & Laptops
