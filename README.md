@@ -30,6 +30,10 @@ To deploy this project run
 
 https://oskulaurila.github.io/portfolio-project-22/dist/
 
+## Learning diary
+
+PDF is Included in the files list
+Learning-diary-osku-laurila-lut-front-end-22.pdf
 
 ## Appendix
 
