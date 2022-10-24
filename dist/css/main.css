@@ -50,6 +50,7 @@
   visibility: hidden;
   transition: all 1s ease-in-out; }
   .menu.show {
+    z-index: 1;
     visibility: visible;
     opacity: 1; }
   .menu-branding, .menu-nav {
@@ -205,7 +206,6 @@ main {
   text-align: center;
   height: calc(100vh - 21px); }
   main .icons {
-    z-index: -1;
     margin-top: 1rem;
     position: absolute;
     bottom: 20px;
